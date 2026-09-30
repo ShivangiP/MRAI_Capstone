@@ -1,0 +1,22 @@
+######################################################################################################################
+						USER AGREEMENT
+######################################################################################################################
+
+The following terms and conditions apply to your use of and access to any website owned or operated by MRAI Team. The terms "we" or "us" or "our" refer to MRAI and the terms "you" or "your" refer to you, the person using or accessing the MRAI Website. 
+
+You should carefully read this Agreement. By using or accessing a MRAI Website, you agree to these terms and conditions.
+ 
+BELOW ARE IMPORTANT PROVISIONS IN THIS AGREEMENT THAT AFFECT YOUR RIGHTS UNDER CERTAIN CIRCUMSTANCES:
+1) PLEASE DO NOT UPLOAD ANY PHI DATA TO WEBSITE. ALL THE DATA IS PRESERVED IN CLOUD INFRASTRUCTURE FOR MODEL ANALYSIS FOR 30 DAYS.
+2) WEBSITE DOES NOT DO ANY ANONYNOMIZATION. USAGE IS PURELY UPTO USER DISCRETION
+3) IN CASE OF IMMEDIATE ATTENTION ON DATA DELETION PLEASE REACH OUT TO ANY MRAI TEAM MEMBERS (EMAIL ID IS IN CONTACT US)
+4) PLEASE UPLOAD H5 FILE FORMAT OF ECHO1 SAGITTAL PLANE KNEE IMAGES FROM QDESS GE SCANNERS. NO OTHER FILE FORMAT IS ACCEPTABLE.
+
+
+Below are the feature supported by us:
+a) User Data Upload: user can upload h5 file which has stacked large numpy arrays and information about file. Currently we are intaking ECHO1 sagittal plane knee images from QDESS GE Scanners.User will get uuid upon upload which can be used for historical reference and preventing reuploading of same image to the cloud. Data will be persisted for 30 days and deletion can only be done by MRAI team members. No PHI data must be uploaded to website. H5 images are anonymized and numpy arrays from DICOM (Digital Imaging and Communications in Medicine) image.
+
+b) Tissue Segmentation : Only 7 tissues will be part of segmentation which are Meniscus,ACL, PCL, Femoral Cartilage, Patellar Cartilage and Tibial Cartilage. Model has not been trained for any other tissue which can be found in knee.
+
+c) Pathology Detection : Model can detect only abnormality with respect to 4 pathological categories  such as Meniscal Tear, Ligament Tear, Cartilage Lesion and Effusion.Model has not been trained for any other pathological category which can be found in knee.
+

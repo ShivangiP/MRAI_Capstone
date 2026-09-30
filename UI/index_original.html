@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MRAI</title>
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/homepage.css">
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.999.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!--<script src="script.js"></script>-->
+</head>
+<body>
+
+<!--Navigation bar--> 
+<script id="replace_with_navbar" src="scripts/nav.js"></script>
+<!--end of Navigation bar-->
+  
+<div class="mission-statement"> 
+
+ <p> Empowering radiologists in delivering timely and precise interpretations of magnetic resonance imaging (MRI) scans through automated tissue segmentation and pathology detection </p>
+</div>
+
+<br>
+
+<div class="row-images">
+  <div class="two-columns">
+    <img id="homepage-images" src="images/tissue_segmentation.png">
+    <br>
+    <span class="caption"> partitioning an image into segments corresponding to different tissue classes <br> (ex: femoral cartilage, tibial cartilage)
+    </span>
+
+  </div>
+  <div class="two-columns">
+    <img id="homepage-images" src="images/pathology_detection.png">
+    <br>
+    <span class="caption">  identification of any abnormality <br>
+    </span>
+  </div>
+</div>
+
+<br>
+
+<div class="summary">
+  <div class="three-columns">
+    <h1> Why? </h1>
+    <p> Currently, radiologists manually segment and detect potential diseases by iterating through each individual slice of an MRI scan. A single MRI scan can contain anywhere from dozens to hundreds of slices. This process is extremely time-intensive and subject to inter- and intra-observer variations such as image artifacts (ex. from motion), low tissue contrast. etc. This limits the use of routine MRI use in clinical practice.</p>
+  </div>
+  <div class="three-columns">
+    <h1> How? </h1>
+    <p> Our product uses new-age machine learning techniques to automatically segment tissues and detect potential pathologies in MRI scans. Our segmentation model is a pretrained U-Net model, trained by researchers at Purdue University. Our pathology model is the <a href="https://segment-anything.com/"> Segment Anything Model (SAM)</a>, a popular segmentation model created by researchers at Meta.</p>
+  </div>
+  <div class="three-columns">
+    <h1> Try it Out </h1>
+    <p> Our product is entirely free for use. It accepts H5 or HDF5 files</p>
+    <div class="container">
+    <a href="upload.html"><button> Upload </button></a>
+  </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>MRAI</title>
+      <link rel="stylesheet" href="styles/general.css">
+      <link rel="stylesheet" href="styles/results.css">
+      <script src="https://sdk.amazonaws.com/js/aws-sdk-2.999.0.min.js"></script>
+      <script src="scripts/results.js"></script>
+   </head>
+   <body>
+      <!--Navigation bar--> 
+      <script id="replace_with_navbar" src="scripts/nav.js"></script>
+      <!--end of Navigation bar-->
+
+      <div id="results">
+         <div id="file-summary">
+            <h2> File Summary </h2>
+            <p> Unique Identifier:&nbsp;<p id="uniqueIdentifier"> </p></p>
+            <br> 
+            <p> Uploaded On:&nbsp;<p id="uploadDate"> </p></p>
+            <br>
+            <p> Number of Slices/Images: 160 </p>
+         </div>
+         <div class="model-summary" id="segmentation-summary">
+            <h2> Tissue Summary </h2>
+            <p> This table provides the range of slices that contains each tissue. </p>
+            <table class="model-summary-table" id="segmentation-summary-table">
+               <tr id="segsum-table-headers">
+                  <th> Tissue </th>
+                  <th> First slice appearance </th>
+                  <th> Last slice appearance</th>
+                  <th> # of slices that contain tissue </th>
+               </tr> 
+               <tr id="segsum-pc">
+                  <td> patellar cartilage </td>
+               </tr>
+               <tr id="segsum-fc">
+                  <td> femoral cartilage </td>
+               </tr>
+               <tr id="segsum-mltc">
+                  <td> medial/lateral tibial cartilage </td>
+               </tr>
+               <tr id="segsum-mlm">
+                  <td> medial/lateral meniscus </td>
+               </tr>
+            </table>
+         </div>
+         <div class="model-summary" id="pathology-summary">
+            <h2> Pathology Summary </h2> 
+            <p id="pathology-summary-text"> </p>
+            <table class="model-summary-table" id="pathology-summary-table">
+               <tr>
+                  <th> </th>
+                  <th> First slice appearance </th>
+                  <th> Last slice appearance </th>
+                  <th> # of slices that contain pathology </th>
+               </tr>
+               <tr id="pathology-metrics">
+                  <td> Abnormality </td>
+               </tr>
+            </table>
+
+
+         </div>
+         <div id="visualization">
+            <h2> Visualization </h2>
+         <div class="range" id="range">
+            <p> Please select the range of images you'd like to view. </p>
+            <form id="update-image-range" method="post" enctype="multipart/form-data">
+               <label for="range-min">Min</label>
+               <input type="number" id="range-min" name="range-min" value=60>
+               <label for="range-min">Max</label>
+               <input type="number" id="range-max" name="range-max" value=100>
+               <input id="range-update" type="submit" value="Update">
+               <span class="error-message" id="value-error">Max value cannot be less than min value</span>
+            </form>
+         </div>
+         <div id="toggle">
+            <input type="checkbox" id="switch" />
+            <label for="switch">Toggle</label>
+            <p> Segmentation Overlay </p>
+         </div>
+         <div class="segmentation-images" id="segmentation-images">
+            <div class="spinner" id="spinner-div">
+               <div id="loading-spinner" style="display: block;"></div>
+               <p id='spinner-caption'> Generating Images </p>
+            </div>
+            <!-- javascript will insert all images here -->
+
+      </div>
+      </div>
+
+
+   </body>
+</html>

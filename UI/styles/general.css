@@ -1,0 +1,86 @@
+/* full page */
+
+html {
+  padding:0;
+  margin:0;
+}
+
+body {
+  padding:0;
+  margin:0;
+  background-color: #FFFFFF;
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* headers */
+
+h1 {
+  text-align: center;
+}
+
+
+/* navigation bar */
+
+.navigation-bar {
+  width: 100%;
+  height: 80px;
+  background-color: #FFFFFF;
+}
+
+.navigation-bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FFFFFF ;
+}
+
+.navigation-bar li {
+  float: left;
+}
+
+.navigation-bar li a {
+  display: block;
+  color: #5A5D9E;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  font-weight: bold;
+}
+
+.navigation-bar img {
+  float: left;
+  display: block;
+  height: 80px;
+  width: 275px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navigation-bar li a:hover {
+  background-color: #E7E6E6;
+}
+
+/* form */
+form {
+  text-align: center ;
+}
+
+
+/* mri image */
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 800px;
+}

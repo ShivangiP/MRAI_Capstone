@@ -1,0 +1,321 @@
+/* full page */
+
+html {
+  padding:0;
+  margin:0;
+}
+
+body {
+  padding:0;
+  margin:0;
+  background-color: #FFFFFF;
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* headers */
+
+h1 {
+  text-align: center;
+}
+
+
+/* navigation bar */
+
+.navigation-bar {
+  width: 100%;
+  height: 80px;
+  background-color: #FFFFFF;
+}
+
+.navigation-bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FFFFFF ;
+}
+
+.navigation-bar li {
+  float: left;
+}
+
+.navigation-bar li a {
+  display: block;
+  color: #5A5D9E;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  font-weight: bold;
+}
+
+.navigation-bar img {
+  float: left;
+  display: block;
+  height: 80px;
+  width: 275px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navigation-bar li a:hover {
+  background-color: #E7E6E6;
+}
+
+/* form */
+form {
+  text-align: center ;
+
+}
+
+
+/* mri image */
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 800px;
+}
+
+
+/*
+* HOMEPAGE
+*/
+
+/* MISSION STATEMENT */
+
+.mission-statement p {
+  text-align: center;
+  float: center;
+  font-size: 20px;
+  font-style: italic;
+  margin-left: 100px;
+  margin-right: 100px;
+  color: #5A5D9E;
+}
+
+/* SUMMARY */
+
+.summary {
+  margin-top: 50px;
+}
+
+.summary:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.three-columns {
+  float: left;
+  width: 33.33%;
+  background-color: #E7E6E6;
+  height: 500px;
+  border: 2px solid white;
+}
+
+.three-columns button {
+
+  background-color: #5A5D9E;
+  border: 1px solid #5A5D9E;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  transition-duration:0.4s;
+}
+
+.three-columns button:hover {
+  background-color: white;
+  color: #5A5D9E;
+  }
+
+.three-columns .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.three-columns h1 {
+  font-size: 30px;
+  color: #5A5D9E;
+}
+
+.three-columns p {
+  padding-left: 18px;
+  padding-right: 18px;
+  line-height: 1.5;
+}
+
+/* SEGMENTATION & PATHOLOGY IMAGES */
+
+.row-images {
+  margin-top: 20px;
+}
+
+.row-images:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.two-columns {
+  float: left;
+  width: 50%;
+  background-color: white;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: top;
+
+}
+
+#homepage-images {
+  width: 50%;
+  height: auto;
+}
+
+.caption {
+    display: block;
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+/*
+* OUR TEAM
+*/
+
+/* GENERAL */
+
+.about {
+  text-align: justify;
+}
+
+.about h1 {
+  color: #5A5D9E;
+}
+
+.about p {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* PROFILES */
+
+.row {
+  margin-top: 25px;
+  padding-left: 100px;
+  padding-right: 100px;
+
+}
+
+#profile {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  border: 3px solid white;
+}
+
+#profile_name {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.four-columns {
+  float: left;
+  width: 25%;
+  background-color: white;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: top;
+}
+
+.four-columns a {
+  text-decoration: none;
+  color: #5A5D9E;
+}
+
+.four-columns p {
+  margin: 1px;
+  padding: 0px;
+  text-align: left;
+  font-size: 12px;
+  color: #5A5D9E;
+}
+
+
+/*
+* UPLOAD
+*/
+
+.upload-section {
+  width: 80%;
+  margin:auto;
+}
+
+.drop-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dashed #555;
+  color: #444;
+  cursor: pointer;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover {
+  background: #eee;
+  border-color: #111;
+}
+
+.drop-container:hover .drop-title {
+  color: #222;
+}
+
+.drop-title {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #084cdf;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0d45a5;
+}

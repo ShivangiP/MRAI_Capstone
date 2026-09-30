@@ -1,0 +1,10 @@
+fastapi==0.95.1
+uvicorn==0.21.1
+fastapi-cache2==0.1.9
+redis==7.0.9
+pytest==7.2.1
+boto3==1.26.165
+h5py==3.9.0
+opencv-python
+matplotlib==3.7.2
+python3-skimage

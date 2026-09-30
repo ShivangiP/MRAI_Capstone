@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>MRAI</title>
+      <link rel="stylesheet" href="styles/general.css">
+      <link rel="stylesheet" href="styles/upload.css">
+     <!--  <link href="style.css" rel="stylesheet"> -->
+          <!-- Favicon -->
+    <!-- <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico"/>-->
+    <!-- Font Awesome -->
+   <!--  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">-->
+
+    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
+      <script src="https://sdk.amazonaws.com/js/aws-sdk-2.999.0.min.js"></script>
+      <script src="scripts/script.js"></script>
+      <script src="scripts/popup.js"></script>
+   </head>
+   <body>
+      <!--Navigation bar--> 
+      <script id="replace_with_navbar" src="scripts/nav.js"></script>
+      <!--   <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button> -->
+
+            <!-- Text Logo -->
+            <!-- <a class="navbar-brand" href="#">MRAI</a> -->
+
+            <!-- Image Logo -->
+          <!--   <a class="navbar-brand" href="#mu-team"><img src="assets/images/MRAI_white_long.png"></a>
+
+
+          </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav mu-menu navbar-right">
+                 <li><a href="#mu-featured-slider">Home</a></li>
+                 <li><a href="#mu-about">Market Opportunity</a></li>
+               <li><a href="#mu-contact">Demo</a></li>
+                  <li><a href="#mu-team">Team</a></li>               
+                 <li><a href="learn_more.html">Learn More</a></li>
+                  
+               </ul>
+          </div>--><!-- /.navbar-collapse --> 
+      <!--end of Navigation bar-->
+      <!--User Agreement Popup--> 
+      <div id="popup-overlay">
+         <div id="popup-content">
+            <h2>User Agreement</h2>
+            <p>The following terms and conditions apply to your use of and access to any website owned or operated by MRAI Team. The terms "we" or "us" or "our" refer to MRAI and the terms "you" or "your" refer to you, the person using or accessing the MRAI Website. <br><br>
+               You should carefully read this Agreement. By using or accessing a MRAI Website, you agree to these terms and conditions. <br><br>
+               BELOW ARE IMPORTANT PROVISIONS IN THIS AGREEMENT THAT AFFECT YOUR RIGHTS UNDER CERTAIN CIRCUMSTANCES:
+            <ol>
+               <li>PLEASE DO NOT UPLOAD ANY PII DATA TO WEBSITE. ALL THE DATA IS PRESERVED IN CLOUD INFRASTRUCTURE FOR MODEL ANALYSIS FOR 30 DAYS. </li>
+               <li>WEBSITE DOES NOT DO ANY ANONYNOMIZATION. USAGE IS PURELY UPTO USER DISCRETION </li>
+               <li>IN CASE OF IMMEDIATE ATTENTION ON DATA DELETION PLEASE REACH OUT TO ANY MRAI TEAM MEMBERS (EMAIL ID IS IN CONTACT US)</li>
+               <li>PLEASE UPLOAD H5 FILE FORMAT OF ECHO1 SAGITTAL PLANE KNEE IMAGES FROM QDESS GE SCANNERS. NO OTHER FILE FORMAT IS ACCEPTABLE.</li>
+            </ol>
+            <br>
+            Below are the feature supported by us:
+            <ol style="list-style-type: lower-alpha;">
+               <li>User Data Upload: user can upload h5 file which has stacked large numpy arrays and information about file. Currently we are intaking ECHO1 sagittal plane knee images from QDESS GE Scanners.User will get uuid upon upload which can be used for historical reference and preventing reuploading of same image to the cloud. Data will be persisted for 30 days and deletion can only be done by MRAI team members. No PHI data must be uploaded to website. H5 images are anonymized and numpy arrays from DICOM (Digital Imaging and Communications in Medicine) image. </li>
+               <li>Tissue Segmentation : Only 7 tissues will be part of segmentation which are Meniscus,ACL, PCL, Femoral Cartilage, Patellar Cartilage and Tibial Cartilage. Model has not been trained for any other tissue which can be found in knee. </li>
+               <li>Pathology Detection : Only 4 pathological categories model can detect such as Meniscal Tear, Ligament Tear, Cartilage Lesion and Effusion.Model has not been trained for any other pathological category which can be found in knee.</li>
+            </ol>
+            </p>
+            <button id="agree-button">Agree</button>
+         </div>
+      </div>
+      <!--end of User Agreement Popup-->
+      <div class="upload-section">
+         <h4> Instructions for a successful upload </h4>
+         <ol>
+            <li>File must be a .h5 file</li>
+            <li>Dataset name within h5 file must be "echo1"</li>
+            <li>At the moment, our product only supports knee MRI images. Support for other MRI scans are currently in development</li>
+            <li>
+               If you are running into any issues uploading files, this may be due to your browser settings. Please try doing the following: 
+               <ul>
+                  <li> Hard refresh of the page </li>
+                  <li> Clear browser cookies and history </li>
+                  <li> Try another browser </li>
+               </ul>
+            </li>
+         </ol>
+         <label for="image" class="drop-container" id="dropcontainer">
+            <span class="drop-title">Drop files here</span>
+            or
+            <form id="upload_image" method="post" enctype="multipart/form-data">
+               <input type="file" id="image" name="image" accept=".h5" required><br><br>
+               <input class='stylized-button' id='upload' type="submit" value="Upload">
+            </form>
+         </label>
+         <p style="text-align: left;">If you already have a unique identifier from a previous upload done within the past 30 days, please enter it here to retrieve saved results</p>
+      </div>
+      <div class="retrieve-section">
+         <form id="retrieve_results" method="post" enctype="multipart/form-data">
+            <label for="image_retrieval">Unique Identifier:</label>
+            <input type="text" id="image_retrieval" name="image_retrieval" required>
+            <input id='retrieve' type="submit" value="Retrieve">
+         </form>
+      </div>
+      <div class="loading-bar" id="upload-loading-bar">
+         <div class="progress-bar" id="upload-progress-bar">
+            <p style="color: white; padding-left: 5px"> Uploading H5 File </p>
+         </div>
+      </div>
+      <div class="loading-bar" id="processing-loading-bar">
+         <div class="progress-bar" id="processing-progress-bar">
+            <p style="color: white; padding-left: 5px"> Running Models </p>
+         </div>
+      </div>
+      <div id="successful-upload">
+         <p> Your file has been successfully uploaded and processed. Please note that uploaded files will only be kept for 30 days. If you'd like to return to your results in the future, please record this unique identifier: </p>
+         <b>
+            <p id="uniqueIdentifier"> </p>
+         </b>
+      </div>
+      <div id="results-instructions">
+            <p> You can view your results using the button below. Your results will contain the folowing </p>
+            <ul>
+               <li> A summary of tissues and the slices they're located in  </li>
+               <li> Indication of any abnormal pathologies and the slices they're located in </li>
+               <li> Visualization of each slice & a slice summary </li>
+               <li> Option to toggle on tissue segmentation overlay </li>
+            </ul>
+
+            <button class='stylized-button' id="view-results">View Results</button>
+      </div>
+
+   </body>
+</html>
